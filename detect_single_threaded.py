@@ -76,7 +76,7 @@ if __name__ == '__main__':
     # max number of hands we want to detect/track
     num_hands_detect = 2
 
-    cv2.namedWindow('Single-Threaded Detection', cv2.WINDOW_NORMAL)
+    cv2.namedWindow('Single-Theraded Detection', cv2.WINDOW_NORMAL)
 
     while True:
         # Expand dimensions since the model expects images to have shape: [1, None, None, 3]
@@ -85,7 +85,8 @@ if __name__ == '__main__':
         try:
             image_np = cv2.cvtColor(image_np, cv2.COLOR_BGR2RGB)
         except:
-            print("Error converting to RGB")
+            print("Finish converting to RGB")
+            break
 
         # Actual detection. Variable boxes contains the bounding box cordinates for hands detected,
         # while scores contains the confidence for each of these boxes.
